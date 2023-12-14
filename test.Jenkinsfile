@@ -1,11 +1,19 @@
 pipeline {
-    agent {
-        docker { image 'node:20.10.0-alpine3.19' }
+    agent any
+    
+    tools {
+        // Ensure 'docker' refers to the tool installation defined in Global Tool Configuration
+        docker 'docker'
     }
+
     stages {
-        stage('Test') {
+        stage('Build and Push') {
             steps {
-                sh 'node --version'
+                script {
+                    // Your Docker commands here
+                    sh 'docker build -t your_image_name .'
+                    sh 'docker push your_image_name'
+                }
             }
         }
     }
