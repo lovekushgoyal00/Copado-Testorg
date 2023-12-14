@@ -1,11 +1,9 @@
 pipeline {
-    agent none
-    stages {
-        stage('Example Build') {
-            agent { docker 'maven:3.9.3-eclipse-temurin-17' }
+    agent any
+    stages { 
+        stage('Example') {
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
+                echo 'Hello World'
             }
         }
     }
