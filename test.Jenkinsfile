@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         // Ensure 'docker' refers to the tool installation defined in Global Tool Configuration
-        docker 'docker'
+        docker 'Docker'
     }
 
     stages {
