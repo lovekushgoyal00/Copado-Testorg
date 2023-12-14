@@ -1,9 +1,11 @@
 pipeline {
-    agent any
-    stages { 
-        stage('Example') {
+    agent {
+        docker { image 'node:20.10.0-alpine3.19' }
+    }
+    stages {
+        stage('Test') {
             steps {
-                echo 'Hello World'
+                sh 'node --version'
             }
         }
     }
