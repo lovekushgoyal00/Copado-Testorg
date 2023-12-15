@@ -17,10 +17,5 @@ pipeline {
             }
         }
 
-        stage('Build and Publish') {
-            steps {
-                // Your build and publish steps here
-            }
-        }
     }
 }
