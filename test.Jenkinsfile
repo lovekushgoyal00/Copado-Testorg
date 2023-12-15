@@ -5,7 +5,7 @@ pipeline {
         stage('Read File') {
             steps {
                 script {
-                    def fileContent = readFile 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JenkinsTestSetupData\\object\\Account.object'
+                    def fileContent = readFile 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JenkinsTestSetupData\\objects\\Account.object'
                     echo "File Content: ${fileContent}"
                 }
             }
