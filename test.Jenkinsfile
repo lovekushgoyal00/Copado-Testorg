@@ -1,21 +1,16 @@
-pipeline {
-    agent any
+options {
+    skipDefaultCheckout true
+}
 
-    stages {
-        stage('Git Clone') {
-            steps {
-                // Checkout the code from the Git repository
-                git 'https://github.com/lovekushgoyal00/Copado-Testorg.git'
+stages {
+    stage('Git Clone') {
+        steps {
+            script {
+                // Explicitly checkout the desired branch
+                checkout([$class: 'GitSCM', branches: [[name: 'refs/heads/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'your-credentials-id', url: 'https://github.com/lovekushgoyal00/Copado-Testorg.git']]])
             }
         }
-
-        stage('Install Docker') {
-            steps {
-                // Your Docker installation steps here
-                // Make sure to use Windows-compatible commands
-                bat 'echo Docker installation steps go here'
-            }
-        }
-
     }
+
+    // Your other stages here
 }
