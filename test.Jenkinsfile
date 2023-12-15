@@ -5,7 +5,7 @@ pipeline {
         stage('Read Current Directory Data') {
             steps {
                 script {
-                    cat Account.object
+                    cat test.Jenkinsfile
                 }
             }
         }
